@@ -1,0 +1,1164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6657C90-1401-4705-A2D9-67D3FED711C3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>E_Learning_Management_System</RootNamespace>
+    <AssemblyName>E-Learning Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44392</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SchoolController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BL_Client.cs" />
+    <Compile Include="Models\BL_School.cs" />
+    <Compile Include="Models\Custom\Actions.cs" />
+    <Compile Include="Models\DataAccessLayer\Helper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SuperAdmin\vendors\apexcharts\dist\apexcharts.common.js" />
+    <Content Include="SuperAdmin\vendors\apexcharts\dist\apexcharts.esm.js" />
+    <Content Include="SuperAdmin\vendors\apexcharts\dist\apexcharts.js" />
+    <Content Include="SuperAdmin\vendors\apexcharts\dist\apexcharts.min.js" />
+    <Content Include="SuperAdmin\vendors\bootstrap-input-spinner\src\bootstrap-input-spinner.js" />
+    <Content Include="SuperAdmin\vendors\bootstrap-table\dist\bootstrap-table.min.css" />
+    <Content Include="SuperAdmin\vendors\bootstrap-table\dist\bootstrap-table.min.js" />
+    <Content Include="SuperAdmin\vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="SuperAdmin\vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="SuperAdmin\vendors\counterup\jquery.counterup.min.js" />
+    <Content Include="SuperAdmin\vendors\cropperjs\dist\cropper.min.css" />
+    <Content Include="SuperAdmin\vendors\cropperjs\dist\cropper.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-buttons-bs4\js\buttons.bootstrap4.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-buttons\js\buttons.colVis.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-buttons\js\buttons.flash.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-buttons\js\dataTables.buttons.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-dt\css\jquery.dataTables.min.css" />
+    <Content Include="SuperAdmin\vendors\datatables.net-dt\js\dataTables.dataTables.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-dt\js\dataTables.dataTables.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-editor-dt\css\editor.bootstrap.css" />
+    <Content Include="SuperAdmin\vendors\datatables.net-editor-dt\css\editor.bootstrap.min.css" />
+    <Content Include="SuperAdmin\vendors\datatables.net-responsive-dt\css\responsive.dataTables.min.css" />
+    <Content Include="SuperAdmin\vendors\datatables.net-responsive\js\dataTables.responsive.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-select-dt\css\select.dataTables.css" />
+    <Content Include="SuperAdmin\vendors\datatables.net-select-dt\css\select.dataTables.min.css" />
+    <Content Include="SuperAdmin\vendors\datatables.net-select-dt\js\select.dataTables.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-select-dt\js\select.dataTables.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-select\js\dataTables.select.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net-select\js\dataTables.select.min.js" />
+    <Content Include="SuperAdmin\vendors\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="SuperAdmin\vendors\daterangepicker\daterangepicker.css" />
+    <Content Include="SuperAdmin\vendors\daterangepicker\daterangepicker.js" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\css\demo.css" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\css\dropify.css" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\css\dropify.min.css" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\fonts\dropify.svg" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\js\dropify.js" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\js\dropify.min.js" />
+    <Content Include="SuperAdmin\vendors\dropzone\dist\basic.css" />
+    <Content Include="SuperAdmin\vendors\dropzone\dist\dropzone.css" />
+    <Content Include="SuperAdmin\vendors\dropzone\dist\dropzone.js" />
+    <Content Include="SuperAdmin\vendors\easy-pie-chart\dist\jquery.easypiechart.min.js" />
+    <Content Include="SuperAdmin\vendors\echarts\dist\echarts-en.min.js" />
+    <Content Include="SuperAdmin\vendors\editable-table\mindmup-editabletable.js" />
+    <Content Include="SuperAdmin\vendors\editable-table\numeric-input-example.js" />
+    <Content Include="SuperAdmin\vendors\flot\excanvas.min.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.colorhelpers.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.categories.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.crosshair.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.errorbars.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.fillbetween.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.image.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.navigate.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.pie.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.resize.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.selection.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.stack.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.symbol.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.threshold.js" />
+    <Content Include="SuperAdmin\vendors\flot\jquery.flot.time.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\fullcalendar.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\fullcalendar.min.css" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\gcal.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\gcal.min.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale-all.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\af.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar-dz.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar-kw.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar-ly.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar-ma.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar-sa.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar-tn.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ar.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\bg.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\bs.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ca.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\cs.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\da.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\de-at.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\de-ch.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\de.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\el.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\en-au.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\en-ca.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\en-gb.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\en-ie.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\en-nz.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\es-do.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\es-us.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\es.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\et.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\eu.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\fa.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\fi.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\fr-ca.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\fr-ch.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\fr.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\gl.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\he.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\hi.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\hr.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\hu.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\id.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\is.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\it.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ja.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ka.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\kk.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ko.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\lb.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\lt.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\lv.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\mk.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ms-my.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ms.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\nb.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\nl-be.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\nl.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\nn.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\pl.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\pt-br.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\pt.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ro.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\ru.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\sk.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\sl.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\sq.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\sr-cyrl.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\sr.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\sv.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\th.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\tr.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\uk.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\vi.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\zh-cn.js" />
+    <Content Include="SuperAdmin\vendors\fullcalendar\dist\locale\zh-tw.js" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\ion.rangeSlider.skinModern.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\ion.rangeSlider.skinNice.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\ion.rangeSlider.skinSimple.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\css\normalize.css" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\img\sprite-skin-flat.png" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\img\sprite-skin-modern.png" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\img\sprite-skin-nice.png" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\img\sprite-skin-simple.png" />
+    <Content Include="SuperAdmin\vendors\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <Content Include="SuperAdmin\vendors\jasny-bootstrap\dist\css\jasny-bootstrap.min.css" />
+    <Content Include="SuperAdmin\vendors\jasny-bootstrap\dist\js\jasny-bootstrap.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery-steps\build\jquery.steps.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery-steps\demo\css\jquery.steps.css" />
+    <Content Include="SuperAdmin\vendors\jquery-steps\demo\index.html" />
+    <Content Include="SuperAdmin\vendors\jquery-steps\demo\tabs.html" />
+    <Content Include="SuperAdmin\vendors\jquery-steps\demo\vertical.html" />
+    <Content Include="SuperAdmin\vendors\jquery-toast-plugin\dist\jquery.toast.min.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toast-plugin\dist\jquery.toast.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\themes\toggles-all.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\themes\toggles-dark.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\themes\toggles-iphone.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\themes\toggles-light.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\themes\toggles-modern.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\themes\toggles-soft.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\toggles-full.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\css\toggles.css" />
+    <Content Include="SuperAdmin\vendors\jquery-toggles\toggles.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery-ui.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery.counterup\jquery.counterup.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery.flot.tooltip\js\jquery.flot.tooltip.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\Changelog.txt" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\minheader.txt" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\base.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-bar.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-box.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-bullet.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-discrete.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-line.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-pie.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\chart-tristate.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\defaults.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\footer.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\header.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\interact.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\rangemap.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\simpledraw.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\utils.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\vcanvas-base.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\vcanvas-canvas.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\src\vcanvas-vml.js" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\version.txt" />
+    <Content Include="SuperAdmin\vendors\jquery\dist\jquery.min.js" />
+    <Content Include="SuperAdmin\vendors\jszip\dist\jszip.min.js" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\css\lightgallery.min.css" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\fonts\lg.svg" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\img\loading.gif" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\img\video-play.png" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\img\vimeo-play.png" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\img\youtube-play.png" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\js\lightgallery-all.min.js" />
+    <Content Include="SuperAdmin\vendors\moment\ender.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\af.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar-dz.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar-kw.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar-ly.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar-ma.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar-sa.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar-tn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ar.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\az.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\be.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\bg.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\bm.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\bn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\bo.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\br.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\bs.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ca.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\cs.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\cv.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\cy.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\da.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\de-at.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\de-ch.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\de.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\dv.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\el.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\en-au.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\en-ca.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\en-gb.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\en-ie.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\en-il.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\en-nz.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\eo.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\es-do.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\es-us.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\es.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\et.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\eu.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fa.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fi.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fo.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fr-ca.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fr-ch.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fr.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\fy.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\gd.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\gl.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\gom-latn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\gu.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\he.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\hi.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\hr.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\hu.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\hy-am.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\id.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\is.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\it.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ja.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\jv.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ka.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\kk.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\km.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\kn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ko.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ky.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\lb.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\lo.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\lt.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\lv.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\me.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\mi.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\mk.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ml.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\mn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\mr.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ms-my.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ms.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\mt.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\my.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\nb.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ne.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\nl-be.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\nl.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\nn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\pa-in.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\pl.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\pt-br.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\pt.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ro.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ru.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sd.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\se.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\si.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sk.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sl.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sq.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sr-cyrl.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sr.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ss.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sv.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\sw.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ta.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\te.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tet.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tg.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\th.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tl-ph.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tlh.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tr.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tzl.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tzm-latn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\tzm.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ug-cn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\uk.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\ur.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\uz-latn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\uz.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\vi.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\x-pseudo.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\yo.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\zh-cn.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\zh-hk.js" />
+    <Content Include="SuperAdmin\vendors\moment\locale\zh-tw.js" />
+    <Content Include="SuperAdmin\vendors\moment\min\locales.js" />
+    <Content Include="SuperAdmin\vendors\moment\min\locales.min.js" />
+    <Content Include="SuperAdmin\vendors\moment\min\moment-with-locales.js" />
+    <Content Include="SuperAdmin\vendors\moment\min\moment-with-locales.min.js" />
+    <Content Include="SuperAdmin\vendors\moment\min\moment.min.js" />
+    <Content Include="SuperAdmin\vendors\moment\moment.js" />
+    <Content Include="SuperAdmin\vendors\moment\package.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\check-overflow.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\date-from-array.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\from-anything.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\from-array.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\from-object.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\from-string-and-array.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\from-string-and-format.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\from-string.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\local.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\parsing-flags.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\utc.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\create\valid.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\abs.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\add-subtract.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\as.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\bubble.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\clone.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\constructor.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\create.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\duration.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\get.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\humanize.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\iso-string.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\prototype.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\duration\valid.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\format\format.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\base-config.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\calendar.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\constructor.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\en.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\formats.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\invalid.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\lists.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\locale.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\locales.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\ordinal.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\pre-post-format.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\prototype.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\relative.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\locale\set.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\add-subtract.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\calendar.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\clone.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\compare.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\constructor.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\creation-data.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\diff.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\format.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\from.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\get-set.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\locale.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\min-max.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\moment.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\now.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\prototype.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\start-end-of.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\to-type.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\to.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\moment\valid.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\parse\regex.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\parse\token.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\aliases.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\constants.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\day-of-month.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\day-of-week.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\day-of-year.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\hour.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\millisecond.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\minute.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\month.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\offset.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\priorities.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\quarter.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\second.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\timestamp.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\timezone.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\units.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\week-calendar-utils.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\week-year.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\week.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\units\year.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\abs-ceil.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\abs-floor.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\abs-round.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\compare-arrays.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\defaults.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\deprecate.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\extend.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\has-own-prop.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\hooks.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\index-of.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-array.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-date.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-function.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-number.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-object-empty.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-object.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\is-undefined.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\keys.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\map.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\mod.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\some.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\to-int.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\lib\utils\zero-fill.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\af.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar-dz.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar-kw.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar-ly.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar-ma.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar-sa.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar-tn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ar.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\az.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\be.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\bg.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\bm.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\bn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\bo.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\br.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\bs.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ca.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\cs.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\cv.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\cy.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\da.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\de-at.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\de-ch.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\de.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\dv.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\el.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\en-au.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\en-ca.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\en-gb.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\en-ie.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\en-il.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\en-nz.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\eo.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\es-do.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\es-us.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\es.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\et.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\eu.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fa.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fi.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fo.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fr-ca.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fr-ch.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fr.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\fy.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\gd.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\gl.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\gom-latn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\gu.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\he.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\hi.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\hr.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\hu.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\hy-am.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\id.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\is.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\it.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ja.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\jv.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ka.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\kk.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\km.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\kn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ko.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ky.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\lb.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\lo.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\lt.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\lv.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\me.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\mi.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\mk.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ml.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\mn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\mr.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ms-my.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ms.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\mt.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\my.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\nb.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ne.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\nl-be.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\nl.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\nn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\pa-in.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\pl.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\pt-br.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\pt.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ro.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ru.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sd.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\se.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\si.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sk.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sl.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sq.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sr-cyrl.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sr.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ss.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sv.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\sw.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ta.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\te.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tet.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tg.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\th.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tl-ph.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tlh.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tr.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tzl.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tzm-latn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\tzm.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ug-cn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\uk.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\ur.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\uz-latn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\uz.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\vi.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\x-pseudo.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\yo.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\zh-cn.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\zh-hk.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\locale\zh-tw.js" />
+    <Content Include="SuperAdmin\vendors\moment\src\moment.js" />
+    <Content Include="SuperAdmin\vendors\morris.js\morris.css" />
+    <Content Include="SuperAdmin\vendors\morris.js\morris.min.js" />
+    <Content Include="SuperAdmin\vendors\nestable2\dist\jquery.nestable.min.css" />
+    <Content Include="SuperAdmin\vendors\nestable2\dist\jquery.nestable.min.js" />
+    <Content Include="SuperAdmin\vendors\owl.carousel\dist\assets\owl.carousel.min.css" />
+    <Content Include="SuperAdmin\vendors\owl.carousel\dist\assets\owl.theme.default.min.css" />
+    <Content Include="SuperAdmin\vendors\owl.carousel\dist\assets\owl.video.play.png" />
+    <Content Include="SuperAdmin\vendors\owl.carousel\dist\owl.carousel.min.js" />
+    <Content Include="SuperAdmin\vendors\pdfmake\build\pdfmake.min.js" />
+    <Content Include="SuperAdmin\vendors\pdfmake\build\vfs_fonts.js" />
+    <Content Include="SuperAdmin\vendors\peity\jquery.peity.min.js" />
+    <Content Include="SuperAdmin\vendors\pickr-widget\dist\pickr.min.css" />
+    <Content Include="SuperAdmin\vendors\pickr-widget\dist\pickr.min.js" />
+    <Content Include="SuperAdmin\vendors\popper.js\dist\umd\popper.min.js" />
+    <Content Include="SuperAdmin\vendors\raphael\raphael.min.js" />
+    <Content Include="SuperAdmin\vendors\select2\dist\css\select2.min.css" />
+    <Content Include="SuperAdmin\vendors\select2\dist\js\select2.full.min.js" />
+    <Content Include="SuperAdmin\vendors\select2\dist\js\select2.min.js" />
+    <Content Include="SuperAdmin\vendors\switchery\dist\switchery.min.css" />
+    <Content Include="SuperAdmin\vendors\switchery\dist\switchery.min.js" />
+    <Content Include="SuperAdmin\vendors\tablesaw\dist\tablesaw.css" />
+    <Content Include="SuperAdmin\vendors\tablesaw\dist\tablesaw.jquery.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\changelog.txt" />
+    <Content Include="SuperAdmin\vendors\tinymce\jquery.tinymce.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\jquery.tinymce.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\license.txt" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\advlist\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\anchor\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autolink\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autoresize\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autosave\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\bbcode\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\charmap\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\codesample\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\code\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\code\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\colorpicker\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\contextmenu\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\directionality\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\fullpage\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\fullscreen\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\help\img\logo.png" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\help\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\help\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\hr\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\hr\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\imagetools\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\imagetools\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\image\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\image\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\importcss\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\insertdatetime\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\legacyoutput\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\link\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\link\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\lists\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\lists\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\media\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\media\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\nonbreaking\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\noneditable\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\pagebreak\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\paste\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\paste\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\preview\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\preview\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\print\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\print\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\save\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\save\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\searchreplace\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\spellchecker\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\tabfocus\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\table\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\table\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\template\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\template\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\textcolor\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\textpattern\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\toc\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\toc\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualblocks\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualchars\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\wordcount\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\content.mobile.min.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\skin.mobile.min.css" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\inlite\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\inlite\theme.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\inlite\theme.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\mobile\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\mobile\theme.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\mobile\theme.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\modern\index.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\modern\theme.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\themes\modern\theme.min.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\tinymce.js" />
+    <Content Include="SuperAdmin\vendors\tinymce\tinymce.min.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-de-merc.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-es-merc.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-ru-mill.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-us-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\jvectormap.custom.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ak-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-al-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ar-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-az-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ca-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-co-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ct-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-dc-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-de-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-fl-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ga-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-hi-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ia-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-id-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-il-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-in-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ks-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ky-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-la-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ma-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-md-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-me-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-mi-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-mn-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-mo-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ms-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-mt-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-nc-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-nd-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ne-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-nh-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-nj-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-nm-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-nv-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ny-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-oh-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ok-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-or-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-pa-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ri-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-sc-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-sd-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-tn-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-tx-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-ut-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-va-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-vt-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-wa-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-wi-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-wv-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\vectormap\us\jquery-jvectormap-data-us-wy-lcc-en.js" />
+    <Content Include="SuperAdmin\vendors\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LayoutSuperAdmin.cshtml" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_border-color.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_border-radius.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_border-style.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_border-width.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_buttons.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_clearfix.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_ellipsis.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_font-stacks.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_hide-text.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_margin.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_padding.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_position.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_prefixer.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_retina-image.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_size.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_text-inputs.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_timing-functions.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_triangle.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\addons\_word-wrap.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_animation.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_appearance.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_backface-visibility.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_background-image.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_background.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_border-image.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_calc.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_columns.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_filter.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_flex-box.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_font-face.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_font-feature-settings.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_hidpi-media-query.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_hyphens.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_image-rendering.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_keyframes.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_linear-gradient.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_perspective.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_placeholder.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_radial-gradient.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_selection.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_text-decoration.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_transform.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_transition.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\css3\_user-select.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_assign-inputs.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_contains-falsy.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_contains.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_is-length.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_is-light.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_is-number.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_is-size.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_modular-scale.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_px-to-em.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_px-to-rem.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_shade.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_strip-units.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_tint.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_transition-property-name.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\functions\_unpack.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_convert-units.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_directional-values.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_font-source-declaration.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_gradient-positions-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_linear-angle-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_linear-gradient-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_linear-positions-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_linear-side-corner-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_radial-arg-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_radial-gradient-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_radial-positions-parser.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_render-gradients.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_shape-size-stripper.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\helpers\_str-to-num.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\settings\_asset-pipeline.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\settings\_prefixer.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\settings\_px-to-em.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\_bourbon-deprecated-upcoming.scss" />
+    <Content Include="SuperAdmin\vendors\bourbon\app\assets\stylesheets\_bourbon.scss" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\fonts\dropify.eot" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\fonts\dropify.ttf" />
+    <Content Include="SuperAdmin\vendors\dropify\dist\fonts\dropify.woff" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\.bower.json" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\.gitignore" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\dist\.gitignore" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\Makefile" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\README.md" />
+    <Content Include="SuperAdmin\vendors\jquery.sparkline\sparkline.jquery.json" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\fonts\lg.eot" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\fonts\lg.ttf" />
+    <Content Include="SuperAdmin\vendors\lightgallery\dist\fonts\lg.woff" />
+    <Content Include="SuperAdmin\vendors\moment\CHANGELOG.md" />
+    <Content Include="SuperAdmin\vendors\moment\LICENSE" />
+    <Content Include="SuperAdmin\vendors\moment\package.json" />
+    <Content Include="SuperAdmin\vendors\moment\README.md" />
+    <Content Include="SuperAdmin\vendors\tinymce\bower.json" />
+    <Content Include="SuperAdmin\vendors\tinymce\composer.json" />
+    <Content Include="SuperAdmin\vendors\tinymce\package.json" />
+    <Content Include="SuperAdmin\vendors\tinymce\readme.md" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="SuperAdmin\vendors\tinymce\skins\lightgray\fonts\tinymce.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\School\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="SuperAdmin\vendors\moment\moment.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50264</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44392/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
