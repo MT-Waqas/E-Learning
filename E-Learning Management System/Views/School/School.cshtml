@@ -11,16 +11,16 @@
                 @using (Html.BeginForm("School", "School", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
-                    <div class="form-group">
-                        <label for="username">School Name</label>
-                        <div class="input-group">
-                            @*<div class="input-group-prepend">
-                                <span class="input-group-text"></span>
-                            </div>*@
-                            @Html.EditorFor(model => model.SchoolName, new { htmlAttributes = new { @class = "form-control", @id = "username", @placeholder = "School Name" } })
-                            @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "text-danger" })
-                        </div>
+                <div class="form-group">
+                    <label for="username">School Name</label>
+                    <div class="input-group">
+                        @*<div class="input-group-prepend">
+                <span class="input-group-text"></span>
+            </div>*@
+                        @Html.EditorFor(model => model.SchoolName, new { htmlAttributes = new { @class = "form-control", @id = "username", @placeholder = "School Name" } })
                     </div>
+                    @Html.ValidationMessageFor(model => model.SchoolName, "", new { @class = "text-danger" })
+                </div>
 
                     @*<div class="form-group">
                         <label for="email">Email</label>
@@ -64,11 +64,12 @@
                                     }
                                     <input type="file" name="UploadFile" class=" file file-name" />
                                     @Html.HiddenFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.UploadFile, "", new { @class = "text-danger" })
+
                                 </span>
                                 <a href="#" class="btn btn-secondary fileinput-exists" data-dismiss="fileinput">Remove</a>
                             </span>
                         </div>
+                        @Html.ValidationMessageFor(model => model.UploadFile, "", new { @class = "text-danger" })
                     </div>
 
 
