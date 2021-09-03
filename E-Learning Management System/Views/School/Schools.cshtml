@@ -1,0 +1,60 @@
+﻿@model IEnumerable<E_Learning_Management_System.Models.School>
+
+@{
+    ViewBag.Title = "Schools";
+}
+
+<h2>Schools</h2>
+
+<p>
+    @Html.ActionLink("Create New", "School")
+    <div class="modal-dialog modal-xl">...</div>
+    <div class="modal-dialog modal-lg">...</div>
+    <div class="modal-dialog modal-sm">...</div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SchoolID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SchoolID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SchoolID })
+        </td>
+    </tr>
+}
+
+</table>

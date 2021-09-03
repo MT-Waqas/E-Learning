@@ -22,7 +22,7 @@ namespace E_Learning_Management_System.Models.DataAccessLayer
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 con.Close();

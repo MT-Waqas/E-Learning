@@ -1,36 +1,61 @@
 ﻿using E_Learning_Management_System.Models;
+using E_Learning_Management_System.Models.Custom;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 namespace E_Learning_Management_System.Controllers
 {
     public class SchoolController : Controller
     {
+        School schl = new School();
         // GET: School
-        public ActionResult Index()
+        public ActionResult Schools()
         {
-            return View();
+            return View(BL_School.GetSchools());
         }
         public ActionResult School(int? ID)
         {
-            return View();
+            if (ID > 0)
+            {
+                schl.SchoolID = ID;
+                schl = BL_School.GetSchools(schl)[0];
+                return View(schl);
+            }
+            else
+            {
+                return View();
+            }
         }
+        [HttpPost]
         public ActionResult School(School school)
         {
             if (ModelState.IsValid)
             {
-                if (school.SchoolID > 0)
+                if (school.UploadFile.ContentLength > 0)
                 {
-                    BL_School.Save(school);
+                    FileUpload.FileUpload file = new FileUpload.FileUpload();
+                    string FullPath = file.UploadImage(school.UploadFile);
+                    school.Image = FullPath;
                 }
                 else
                 {
-                    BL_School.Save(school, false);
+                    School s = new School();
+                    s.SchoolID = school.SchoolID;
+                    s = BL_School.GetSchools()[0];
+                    school.Image = s.Image;
                 }
-                return RedirectToAction("Index","School");
+                if (school.SchoolID > 0)
+                {
+                    BL_School.Save(school, false);//Update 
+                }
+                else
+                {
+                    BL_School.Save(school);
+                }
+                return RedirectToAction("Index", "School");
             }
             else
             {
@@ -40,7 +65,8 @@ namespace E_Learning_Management_System.Controllers
         public ActionResult Delete(int ID)
         {
             BL_School.Delete(ID);
-            return RedirectToAction("Index", "School"); 
+            return RedirectToAction("Index", "School");
         }
+
     }
 }

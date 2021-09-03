@@ -2,6 +2,7 @@
 using E_Learning_Management_System.Models.DataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace E_Learning_Management_System.Models
             };
             Helper.sp_Execute("sp_School", prm);
         }
-        public static List<School> GetSchools(School schools)
+        public static List<School> GetSchools(School schools=null)
         {
             if (schools == null)
             {
@@ -69,10 +70,17 @@ namespace E_Learning_Management_System.Models
     public class School
     {
         public int? SchoolID { get; set; }
+        [Required]
         public string SchoolName { get; set; }
+        [Required]
         public string SchoolAddress { get; set; }
+        [Required]
         public string Contact { get; set; }
+        [Required]
         public string Image { get; set; }
+        [Required]
         public int Status { get; set; }
+        [Required]
+        public HttpPostedFileBase UploadFile { get; set; }
     }
 }
