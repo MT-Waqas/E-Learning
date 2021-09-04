@@ -10,16 +10,18 @@ namespace E_Learning_Management_System.Controllers
 {
     public class SchoolController : Controller
     {
-        School schl = new School();
+        ViewModel model = new ViewModel();
         // GET: School
         public ActionResult Schools()
         {
-            return View(BL_School.GetSchools());
+            model.SchoolsList = BL_School.GetSchools();
+            return View(model);
         }
         public ActionResult School(int? ID)
         {
             if (ID > 0)
             {
+                School schl = new School();
                 schl.SchoolID = ID;
                 schl = BL_School.GetSchools(schl)[0];
                 return View(schl);

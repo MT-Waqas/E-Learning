@@ -82,5 +82,6 @@ namespace E_Learning_Management_System.Models
         public int? Status { get; set; }
         [Required]
         public HttpPostedFileBase UploadFile { get; set; }
+        public School Schools { get; set; }
     }
 }

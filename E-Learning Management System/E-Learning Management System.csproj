@@ -131,6 +131,7 @@
     <Compile Include="Models\BL_School.cs" />
     <Compile Include="Models\Custom\Actions.cs" />
     <Compile Include="Models\DataAccessLayer\Helper.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1372,6 +1373,7 @@
     <Content Include="SuperAdmin_Assets\dist\fonts\themify-icons\themify.ttf" />
     <Content Include="SuperAdmin_Assets\dist\fonts\themify-icons\themify.woff" />
     <Content Include="Views\School\School.cshtml" />
+    <Content Include="Views\Shared\_AddSchools.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
