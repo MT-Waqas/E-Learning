@@ -32,14 +32,15 @@ namespace E_Learning_Management_System.Models.DataAccessLayer
         public static DataTable sp_GetTable(string sp, SqlParameter[] prm)
         {
             DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand(sp, con);
             try
             {
-                SqlCommand cmd = new SqlCommand(sp,con);
-                cmd.Parameters.Add(prm);
-                SqlDataAdapter da = new SqlDataAdapter();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(prm);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
             }

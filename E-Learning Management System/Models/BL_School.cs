@@ -43,13 +43,14 @@ namespace E_Learning_Management_System.Models
                 new SqlParameter("type",Actions.Select),
             };
             List<School> Schools = new List<School>();
-            DataTable dt = Helper.sp_GetTable("", prm);
+            DataTable dt = Helper.sp_GetTable("sp_School", prm);
             foreach (DataRow dr in dt.Rows)
             {
                 School school = new School();
                 school.SchoolID = Convert.ToInt32(dr["SchoolID"]);
                 school.SchoolName = Convert.ToString(dr["SchoolName"]);
                 school.SchoolAddress = Convert.ToString(dr["SchoolAddress"]);
+                school.Image = Convert.ToString(dr["Image"]);
                 school.Contact = Convert.ToString(dr["Contact"]);
                 school.Status = Convert.ToInt32(dr["Status"]);
                 Schools.Add(school);
@@ -76,10 +77,9 @@ namespace E_Learning_Management_System.Models
         public string SchoolAddress { get; set; }
         [Required]
         public string Contact { get; set; }
-        [Required]
         public string Image { get; set; }
         [Required]
-        public int Status { get; set; }
+        public int? Status { get; set; }
         [Required]
         public HttpPostedFileBase UploadFile { get; set; }
     }

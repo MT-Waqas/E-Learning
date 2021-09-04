@@ -4,57 +4,73 @@
     ViewBag.Title = "Schools";
 }
 
-<h2>Schools</h2>
 
-<p>
-    @Html.ActionLink("Create New", "School")
-    <div class="modal-dialog modal-xl">...</div>
-    <div class="modal-dialog modal-lg">...</div>
-    <div class="modal-dialog modal-sm">...</div>
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SchoolName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SchoolAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contact)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
+@Html.ActionLink("Add", "School", new { }, new { @class = "btn btn-primary" })
+<section class="hk-sec-wrapper">
+    <h5 class="hk-sec-title">Schools List</h5>
+    <div class="row">
+        <div class="col-sm">
+            <div class="table-wrap table-responsive">
+                <table id="datable_1" class="table table-hover w-100 display pb-30">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SchoolName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SchoolAddress)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contact)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Image)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SchoolName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SchoolAddress)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contact)
+                                </td>
+                                <td>
+                                    <img src="@item.Image" height="50" width="50" />
+                                </td>
+                                <td>
+                                    @if (item.Status == 1)
+                                    {
+                                        <span class="badge badge-success">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-danger">InActive</span>
+                                    }
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.SchoolID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.SchoolID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.SchoolID })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SchoolName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SchoolAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contact)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SchoolID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SchoolID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SchoolID })
-        </td>
-    </tr>
-}
-
-</table>

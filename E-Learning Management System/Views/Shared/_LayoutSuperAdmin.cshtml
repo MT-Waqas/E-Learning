@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Deepor I Statistics Dashboard</title>
+    <title>Super Admin</title>
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="/SuperAdmin_Assets/favicon.ico">
+    <link rel="icon" href="/SuperAdmin_Assets/favicon.ico" type="image/x-icon">
+    <!-- Data Table CSS -->
+    <link href="/SuperAdmin_Assets/vendors/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="/SuperAdmin_Assets/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css" />
     <!-- Morris Charts CSS -->
     <link href="/SuperAdmin_Assets/vendors/morris.js/morris.css" rel="stylesheet" type="text/css" />
 
@@ -19,12 +21,35 @@
 
     <!-- Custom CSS -->
     <link href="/SuperAdmin_Assets/dist/css/style.css" rel="stylesheet" type="text/css">
+    <style>
+        #footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+#footerr {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+        #content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+        #page-container {
+  position: relative;
+  min-height: 100vh;
+}
+    </style>
 </head>
-<body>
+<body class="hk-wrapper">
 
 
     <!-- HK Wrapper -->
-    <div class="hk-wrapper hk-alt-nav">
+    <div class="hk-alt-nav">
 
         <!-- Top Navbar -->
         <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hk-navbar-alt">
@@ -50,123 +75,23 @@
                         </a>
                         <div class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <div class="sub-dropdown-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle dropdown-item">Application</a>
-                                <div class="dropdown-menu open-right-side">
-                                    <a class="dropdown-item" href="chats.html">Chat</a>
-                                    <a class="dropdown-item" href="calendar.html">Calendar</a>
+                                <a class="dropdown-item" href="/School/Schools">Schools</a>
+                                <a class="dropdown-item" href="#">Client</a>
+                                @*<a href="#" class="dropdown-toggle dropdown-item">Application</a>
+                                <a class="dropdown-toggle dropdown-item" href="/School/Schools">Schools</a>
+                                <a class="dropdown-toggle dropdown-item" href="#">Client</a>*@
+                                @*<div class="dropdown-menu open-right-side">
+                                    <a class="dropdown-item" href="/School/Schools">Schools</a>
+                                    <a class="dropdown-item" href="#">Client</a>
                                     <a class="dropdown-item" href="email.html">Email</a>
                                     <a class="dropdown-item" href="file-manager.html">File Manager</a>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
                     </li>
                 </ul>
-                <form class="navbar-search-alt">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="ion ion-ios-search"></i></span>
-                        </div>
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    </div>
-                </form>
             </div>
             <ul class="navbar-nav hk-navbar-content">
-                @*<li class="nav-item">
-                        <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><i class="ion ion-ios-settings"></i></a>
-                    </li>*@
-                <li class="nav-item dropdown dropdown-notifications">
-                    <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ion ion-ios-notifications"></i><span class="badge-wrap"><span class="badge badge-primary badge-indicator badge-indicator-sm badge-pill pulse"></span></span></a>
-                    <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                        <h6 class="dropdown-header">Notifications <a href="javascript:void(0);" class="">View all</a></h6>
-                        <div class="notifications-nicescroll-bar">
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-img-wrap">
-                                        <div class="avatar avatar-sm">
-                                            <img src="dist/img/avatar1.jpg" alt="user" class="avatar-img rounded-circle">
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text"><span class="text-dark text-capitalize">Evie Ono</span> accepted your invitation to join the team</div>
-                                            <div class="notifications-time">12m</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-img-wrap">
-                                        <div class="avatar avatar-sm">
-                                            <img src="dist/img/avatar2.jpg" alt="user" class="avatar-img rounded-circle">
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text">New message received from <span class="text-dark text-capitalize">Misuko Heid</span></div>
-                                            <div class="notifications-time">1h</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-img-wrap">
-                                        <div class="avatar avatar-sm">
-                                            <span class="avatar-text avatar-text-primary rounded-circle">
-                                                <span class="initial-wrap"><span><i class="zmdi zmdi-account font-18"></i></span></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text">You have a follow up with<span class="text-dark text-capitalize"> Deepor head</span> on <span class="text-dark text-capitalize">friday, dec 19</span> at <span class="text-dark">10.00 am</span></div>
-                                            <div class="notifications-time">2d</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-img-wrap">
-                                        <div class="avatar avatar-sm">
-                                            <span class="avatar-text avatar-text-success rounded-circle">
-                                                <span class="initial-wrap"><span>A</span></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text">Application of <span class="text-dark text-capitalize">Sarah Williams</span> is waiting for your approval</div>
-                                            <div class="notifications-time">1w</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-img-wrap">
-                                        <div class="avatar avatar-sm">
-                                            <span class="avatar-text avatar-text-warning rounded-circle">
-                                                <span class="initial-wrap"><span><i class="zmdi zmdi-notifications font-18"></i></span></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text">Last 2 days left for the project</div>
-                                            <div class="notifications-time">15d</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
                 <li class="nav-item dropdown dropdown-authentication">
                     <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media">
@@ -205,7 +130,7 @@
         <!-- Main Content -->
         <div class="hk-pg-wrapper">
             <!-- Container -->
-            <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
+            <div class="container-fluid mt-xl-50  mt-15">
                 <!-- Row -->
                 <div class="row">
                     <div class="col-xl-12">
@@ -216,11 +141,12 @@
             </div>
             <!-- /Container -->
             <!-- Footer -->
-            <div class="hk-footer-wrap container">
+            <!-- /Footer -->
+            <div class="hk-footer-wrap container" id="footerr">
                 <footer class="footer">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <p>Pampered by<a href="#" class="text-dark">Hencework</a> © 2019</p>
+                            <p class="text-dark">Pampered by<a href="#">IT Professionals</a> ©@(DateTime.Now.Year)</p>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <p class="d-inline-block">Follow us</p>
@@ -231,8 +157,8 @@
                     </div>
                 </footer>
             </div>
-            <!-- /Footer -->
         </div>
+        
         <!-- /Main Content -->
 
     </div>
@@ -245,11 +171,23 @@
     <script src="/SuperAdmin_Assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Jasny-bootstrap  JavaScript -->
-    <script src="/SuperAdmin_Assets/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script> 
+    <script src="/SuperAdmin_Assets/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 
     <!-- Slimscroll JavaScript -->
     <script src="/SuperAdmin_Assets/dist/js/jquery.slimscroll.js"></script>
-
+    <script src="/SuperAdmin_Assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/SuperAdmin_Assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/SuperAdmin_Assets/dist/js/dataTables-data.js"></script>
     <!-- Fancy Dropdown JS -->
     <script src="/SuperAdmin_Assets/dist/js/dropdown-bootstrap-extended.js"></script>
 
@@ -281,11 +219,11 @@
     <script src="/SuperAdmin_Assets/vendors/peity/jquery.peity.min.js"></script>
 
     <!-- Apex JavaScript -->
-    <script src="/SuperAdmin_Assets/vendors/apexcharts/dist/apexcharts.min.js"></script>
+    @*<script src="/SuperAdmin_Assets/vendors/apexcharts/dist/apexcharts.min.js"></script>*@
 
     <!-- Init JavaScript -->
-    <script src="/SuperAdmin_Assets/dist/js/init.js"></script>
-    <script src="/SuperAdmin_Assets/dist/js/dashboard3-data.js"></script>
+    @*<script src="/SuperAdmin_Assets/dist/js/init.js"></script>
+    <script src="/SuperAdmin_Assets/dist/js/dashboard3-data.js"></script>*@
 
 </body>
 </html>

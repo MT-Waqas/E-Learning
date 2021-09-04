@@ -29,6 +29,16 @@ namespace E_Learning_Management_System.Controllers
                 return View();
             }
         }
+        public string UploadImage(HttpPostedFileBase Image)
+        {
+            string Name = Path.GetFileName(Image.FileName); //getting name of file
+            string extension = Path.GetExtension(Name);//getting extension of file
+            Name = Guid.NewGuid() + "_" + DateTime.Now.ToString("yyyyMMdhhmmss") + extension; //generating unique name of file
+            string path = Path.Combine("~/UploadImages/" + Name);
+            Image.SaveAs(Server.MapPath(path));//Save image in the specific Folder
+            string DomainName = HttpContext.Request.Url.GetLeftPart(UriPartial.Authority); //to get domain name
+            return DomainName + "/UploadImages/" + Name;
+        }
         [HttpPost]
         public ActionResult School(School school)
         {
@@ -36,8 +46,7 @@ namespace E_Learning_Management_System.Controllers
             {
                 if (school.UploadFile.ContentLength > 0)
                 {
-                    FileUpload.FileUpload file = new FileUpload.FileUpload();
-                    string FullPath = file.UploadImage(school.UploadFile);
+                    string FullPath = UploadImage(school.UploadFile);
                     school.Image = FullPath;
                 }
                 else
@@ -55,7 +64,7 @@ namespace E_Learning_Management_System.Controllers
                 {
                     BL_School.Save(school);
                 }
-                return RedirectToAction("Index", "School");
+                return RedirectToAction("Schools", "School");
             }
             else
             {

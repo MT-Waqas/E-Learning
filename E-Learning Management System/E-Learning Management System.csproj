@@ -366,6 +366,7 @@
     <Content Include="SuperAdmin_Assets\dist\js\validation-data.js" />
     <Content Include="SuperAdmin_Assets\dist\js\vectormap-data.js" />
     <Content Include="SuperAdmin_Assets\dist\js\widgets-data.js" />
+    <Content Include="SuperAdmin_Assets\favicon.ico" />
     <Content Include="SuperAdmin_Assets\vendors\apexcharts\dist\apexcharts.common.js" />
     <Content Include="SuperAdmin_Assets\vendors\apexcharts\dist\apexcharts.esm.js" />
     <Content Include="SuperAdmin_Assets\vendors\apexcharts\dist\apexcharts.js" />
